@@ -1,4 +1,5 @@
 set paste
+set encoding=UTF-8
 set shell=$SHELL
 syntax on " turn on syntax highlighting
 syntax enable
@@ -25,9 +26,25 @@ let NERDTreeShowHidden=1
 let NERDTreeWinPos = "right"
 let g:NERDTreeWinSize=40
 
+" smart tab lines vim-airline
+let g:airline#extensions#tabline#enabled = 1
+
+" bind to tab line buffers
+let g:airline#extensions#tabline#left_sep = '  '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+nnoremap <A-h> :bprevious<CR>
+nnoremap <A-l> :bnext<CR>
+nnoremap <A-j> :bfirst<CR>
+nnoremap <A-k> :blast<CR>
+nnoremap <A-q> :bdelete<CR>
+
+
 nnoremap <C-m> :NERDTreeFocus<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<cr>
+
 nnoremap <S-P> :vsplit<Esc> 
 nnoremap <S-H> :split<Esc>
 
@@ -42,6 +59,8 @@ call plug#begin()
   Plug 'mhartington/oceanic-next'
   Plug 'arcticicestudio/nord-vim'
   Plug 'neovim/nvim-lspconfig'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
