@@ -182,6 +182,9 @@ export LS_COLORS
 
 # docker service start
 alias docker-start='sudo service docker start'
-alias docker-c='docker container start '
+
+alias attach='tmux attach -t '
+alias dir='explorer.exe .'
 
 export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
+. /home/rick/z.sh
