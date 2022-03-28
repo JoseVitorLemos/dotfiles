@@ -1,10 +1,12 @@
 " --- Global settings ---
 syntax enable " Enable syntax highlight
-set termguicolors " use turn color background vim for use cursorLine
+set termguicolors "Enable nvim colors
 set hidden
-set nowrap " Long line as just one line
-set encoding=utf8
+"set nowrap " Long line as just one line
+"set cmdheight=2 " give more spaces for displaying massages
+set encoding=utf-8
 set number
+set relativenumber
 set shell=$SHELL
 set noswapfile 
 set expandtab " Convert tabs in spaces
@@ -18,14 +20,14 @@ set softtabstop=2 "  how many columns (=spaces) the cursor moves right when you 
 set smartindent
 set gdefault
 set showmatch
-set incsearch
+"set incsearch " ignore upercase search
+set nohlsearch "clean search highlightin
 set ignorecase
 set smartcase
 set cursorline  " will highlight the current line in every window and update the highlight as the cursor moves
-set nohlsearch "clean search highlightin
 set clipboard=unnamedplus
-set pastetoggle=<F2>
 let mapleader = " " " map leader to Space
+set bg=dark "background dark
 
 let NERDTreeShowHidden=1
 let NERDTreeWinPos = "right"
@@ -35,45 +37,63 @@ nnoremap <C-m> :NERDTreeFocus<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<cr>
 
+nnoremap <F9> :source ~/.config/nvim/init.vim<cr>
+nnoremap <F10> :PlugInstall<cr>
+
 nnoremap <S-P> :vsplit<Esc> 
 nnoremap <S-H> :split<Esc>
 
-vnoremap < <gv
+" remove quetes
+nnoremap <Leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
+
+nnoremap <Leader>' :%s/"/' <Enter>
+
+nnoremap <Leader>rs :g/^$/:delete <Enter>
+
+"qrasfd"
+
+vnoremap  < <gv
 vnoremap > >gv
+
 
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+let g:typescript_opfirst='\%([<>=,?^%|*/&]\|\([-:+]\)\1\@!\|!=\|in\%(stanceof\)\=\>\)'
+
 call plug#begin()
 
+  " Vim file system explorer
   Plug 'preservim/nerdtree'
+  "Plug 'kyazdani42/nvim-tree.lua'
 
   " Inicialize language server
   Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-  " Plug 'neovim/nvim-lspconfig'
-  " Plug 'williamboman/nvim-lsp-installer'
+  "Plug 'neovim/nvim-lspconfig'
+  "Plug 'williamboman/nvim-lsp-installer'
 
-  " Suporte Language
+  " Syntax highlight
   Plug 'pangloss/vim-javascript'    " javaScript support
-  Plug 'leafgarland/typescript-vim' " typeScript syntax
+  "Plug 'leafgarland/typescript-vim' " typeScript syntax
 
   " top bars vim
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'romgrk/barbar.nvim'
 
   " Themes
-  Plug 'arcticicestudio/nord-vim'
+  "Plug 'arcticicestudio/nord-vim'
   " Plug 'mhartington/oceanic-next'
+  Plug 'morhetz/gruvbox'
 
   " Buffers
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
 
   " Styles
-  Plug 'ap/vim-css-color' " show colors in code css
   Plug 'joom/vim-commentary' " gcc comentary
+  Plug 'ap/vim-css-color' " show colors in code css
   Plug 'ryanoasis/vim-devicons' " nerdtree icons
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " colors for nerdtree icons
 
@@ -81,14 +101,18 @@ call plug#begin()
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
 
-  " load image nvim
-  Plug 'edluffy/hologram.nvim'
-
 call plug#end()
 
-colorscheme nord
+colorscheme gruvbox 
 
-" coc.nvim
+" vim transparent
+nnoremap <C-n> :TransparentToggle<cr>
+let g:transparent_enabled = v:true
+source ~/.config/nvim/lua/transparent.lua
+source ~/.config/nvim/lua/transparent.vim
+
+" language server
+"source ~/.config/nvim/plug-config/lsp-config.lua
 source ~/.config/nvim/plug-config/coc-config.vim
 " buffers top bar config
 source ~/.config/nvim/plug-config/buffer-config.vim

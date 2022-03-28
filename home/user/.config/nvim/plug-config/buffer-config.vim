@@ -30,7 +30,7 @@ nnoremap <silent>    <A-8> :BufferGoto 8<CR>
 nnoremap <silent>    <A-9> :BufferLast<CR>
 
 " Sort automatically by...
-nnoremap <silent> <Space>bb :BufferOrderByBufferNumber<CR>
+nnoremap <silent> <Space>bn :BufferOrderByBufferNumber<CR>
 nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
 nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
 nnoremap <silent> <Space>bw :BufferOrderByWindowNumber<CR>
