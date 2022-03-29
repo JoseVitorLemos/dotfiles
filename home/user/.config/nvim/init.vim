@@ -27,11 +27,12 @@ set smartcase
 set cursorline  " will highlight the current line in every window and update the highlight as the cursor moves
 set clipboard=unnamedplus
 let mapleader = " " " map leader to Space
-set bg=dark "background dark
+"set bg=dark "background dark
 
+let NERDTreeMinimalUI=1
 let NERDTreeShowHidden=1
 let NERDTreeWinPos = "right"
-let g:NERDTreeWinSize=40
+let g:NERDTreeWinSize=35
 
 nnoremap <C-m> :NERDTreeFocus<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
@@ -61,8 +62,6 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-let g:typescript_opfirst='\%([<>=,?^%|*/&]\|\([-:+]\)\1\@!\|!=\|in\%(stanceof\)\=\>\)'
-
 call plug#begin()
 
   " Vim file system explorer
@@ -70,22 +69,25 @@ call plug#begin()
   "Plug 'kyazdani42/nvim-tree.lua'
 
   " Inicialize language server
-  Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-  "Plug 'neovim/nvim-lspconfig'
-  "Plug 'williamboman/nvim-lsp-installer'
+  "Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'williamboman/nvim-lsp-installer'
 
   " Syntax highlight
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'pangloss/vim-javascript'    " javaScript support
   "Plug 'leafgarland/typescript-vim' " typeScript syntax
+  "Plug 'HerringtonDarkholme/yats.vim'
 
   " top bars vim
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'romgrk/barbar.nvim'
 
   " Themes
-  "Plug 'arcticicestudio/nord-vim'
+  Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
   " Plug 'mhartington/oceanic-next'
-  Plug 'morhetz/gruvbox'
+  "Plug 'morhetz/gruvbox'
+  "Plug 'projekt0n/github-nvim-theme'
 
   " Buffers
   Plug 'vim-airline/vim-airline'
@@ -103,18 +105,26 @@ call plug#begin()
 
 call plug#end()
 
-colorscheme gruvbox 
+let g:LanguageClient_serverCommands = { 'typescript': ['typescript-language-server', '--stdio', '--tsserver-path', 'node_modules/.bin/tsserver'] }
+
+colorscheme nord 
 
 " vim transparent
 nnoremap <C-n> :TransparentToggle<cr>
-let g:transparent_enabled = v:true
+let g:transparent_enabled = v:false
 source ~/.config/nvim/lua/transparent.lua
 source ~/.config/nvim/lua/transparent.vim
 
+
+
 " language server
-"source ~/.config/nvim/plug-config/lsp-config.lua
-source ~/.config/nvim/plug-config/coc-config.vim
+source ~/.config/nvim/plug-config/lsp-config.lua
+"source ~/.config/nvim/plug-config/lsp-autocomplete.lua
+
+"source ~/.config/nvim/plug-config/coc-config.vim
+"
 " buffers top bar config
 source ~/.config/nvim/plug-config/buffer-config.vim
+
 " telescope
 source ~/.config/nvim/plug-config/telescope-config.vim
