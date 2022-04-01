@@ -13,8 +13,8 @@ call plug#begin()
   "Plug 'preservim/nerdtree'
   "Plug 'ryanoasis/vim-devicons' " nerdtree icons
   "Plug 'romgrk/barbar.nvim'
-  Plug 'arcticicestudio/nord-vim'
-  "Plug 'morhetz/gruvbox'
+  "Plug 'arcticicestudio/nord-vim'
+  Plug 'morhetz/gruvbox'
   "Plug 'projekt0n/github-nvim-theme'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
