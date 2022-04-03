@@ -36,10 +36,10 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-nnoremap <C-Up> :resize +4<CR>
-nnoremap <C-Down> :resize -4<CR>
-nnoremap <C-Left> :vertical resize +4<CR>
-nnoremap <C-Right> :vertical resize -4<CR>
+nnoremap <C-Up> :resize -4<CR>
+nnoremap <C-Down> :resize +4<CR>
+nnoremap <C-Left> :vertical resize -4<CR>
+nnoremap <C-Right> :vertical resize +4<CR>
 
 nnoremap <S-P> :vsplit<Esc> 
 nnoremap <S-H> :split<Esc>
@@ -50,6 +50,8 @@ vnoremap > >gv
 inoremap <C-c> console.log(
 inoremap <C-d> describe('', () => {})
 inoremap <C-t> test('', () => {})<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " highlight and search word
 function! s:getSelectedText()

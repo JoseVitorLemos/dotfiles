@@ -30,7 +30,7 @@ let g:nvim_tree_show_icons = {
 \ }
 
 nnoremap <C-t> :NvimTreeToggle<CR>
-nnoremap <C-r> :NvimTreeRefresh<CR>
+nnoremap <Space>r :NvimTreeRefresh<CR>
 nnoremap <C-f> :NvimTreeFindFile<CR>
 
 set termguicolors
