@@ -1,8 +1,8 @@
 call plug#begin()
-  "Plug 'neoclide/coc.nvim'
-  Plug 'neovim/nvim-lspconfig'
-  Plug 'williamboman/nvim-lsp-installer'
-  Plug 'haorenW1025/completion-nvim'
+  Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'npm install --frozen-lockfile' }
+  " Plug 'neovim/nvim-lspconfig'
+  " Plug 'williamboman/nvim-lsp-installer'
+  " Plug 'haorenW1025/completion-nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   "Plug 'pangloss/vim-javascript'    " javaScript support
   Plug 'kyazdani42/nvim-web-devicons'

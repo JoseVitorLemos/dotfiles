@@ -74,8 +74,8 @@ require'nvim-tree'.setup {
     mappings = {
       custom_only = false,
       list = {
-        { key = "v",                        cb = tree_cb("vsplit") },
-        { key = "V",                        cb = tree_cb("split") },
+        --{ key = "v",                        cb = tree_cb("vsplit") },
+        --{ key = "V",                        cb = tree_cb("split") },
         { key = "R",                            cb = tree_cb("refresh") },
         { key = "D",                            cb = tree_cb("trash") },
         { key = "r",                            cb = tree_cb("rename") },

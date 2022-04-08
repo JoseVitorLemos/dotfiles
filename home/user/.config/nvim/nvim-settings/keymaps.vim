@@ -3,6 +3,8 @@ map <silent> <F1> :source ~/.config/nvim/init.vim<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
+nmap Z i<cr><esc>k$
+
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
@@ -24,6 +26,8 @@ inoremap <C-d> describe('', () => {})
 inoremap <C-t> test('', () => {})<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
+noremap <C-c> :%bd\|e#\|bd#<cr>\|'" 
 
 " highlight and search word
 function! s:getSelectedText()
