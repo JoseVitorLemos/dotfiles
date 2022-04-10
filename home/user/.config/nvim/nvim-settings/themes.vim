@@ -6,3 +6,6 @@ set background=dark
 
 " Gruvbox
 colorscheme gruvbox 
+
+" transparent
+hi normal guibg=000000
