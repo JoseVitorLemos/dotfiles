@@ -1,9 +1,9 @@
 set syntax
-set hidden
 set encoding=utf-8
 set number
 set relativenumber
 set shell=$SHELL
+set hidden " show all buffers
 set noswapfile 
 set expandtab " Convert tabs in spaces
 set copyindent
@@ -22,9 +22,10 @@ set smartcase
 set cursorline  " will highlight the current line in every window and update the highlight as the cursor moves
 set clipboard=unnamedplus
 let mapleader = " " " map leader to Space
-"hi normal guibg=000000
+
+" disable comment on insert
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 cnoreabbrev W w " sabe with :W and :w
 cnoreabbrev Q q " leave with :Q and :q
-
 
