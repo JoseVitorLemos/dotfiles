@@ -21,4 +21,5 @@ call plug#begin()
   Plug 'ap/vim-css-color' " show colors in code css
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
+  Plug 'tribela/vim-transparent'
 call plug#end()

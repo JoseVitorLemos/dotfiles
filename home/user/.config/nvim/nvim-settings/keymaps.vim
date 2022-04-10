@@ -27,7 +27,10 @@ inoremap <C-t> test('', () => {})<Left><Left><Left><Left><Left><Left><Left><Left
 
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
-noremap <C-c> :%bd\|e#\|bd#<cr>\|'" 
+" set transparent default
+let g:transparent_enabled = v:true
+nnoremap <C-n> :TransparentToggle<cr>
+
 
 " highlight and search word
 function! s:getSelectedText()
