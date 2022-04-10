@@ -1,4 +1,7 @@
 {
-  "javascript.suggestionActions.enabled": false,
-  "eslint.fileTypes": ["javascript", "typescript"]
+  "typescript.showUnused": false,
+  "javascript.showUnused": false,
+  "diagnostic.enable": false ,
+  "coc.preferences.diagnostic.enableMessa": false,
+  "diagnostic.enableMessage": false
 }
