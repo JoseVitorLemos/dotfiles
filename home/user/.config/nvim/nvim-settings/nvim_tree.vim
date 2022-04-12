@@ -33,7 +33,6 @@ nnoremap <C-t> :NvimTreeToggle<CR>
 nnoremap <Space>r :NvimTreeRefresh<CR>
 nnoremap <C-f> :NvimTreeFindFile<CR>
 
-set termguicolors
 "highlight NvimTreeFolderIcon guibg=blue
 
 lua << EOF
@@ -52,7 +51,7 @@ require'nvim-tree'.setup {
     enable = false,
   },
   update_focused_file = {  -- update the focused file on `BufEnter`, un-collapses the folders recursively until it finds the file
-    enable = true,
+    enable = false,
     -- update the root directory of the tree to the one of the folder containing the file if the file is not under the current root directory
     -- only relevant when `update_focused_file.enable` is true
     update_cwd = false,
@@ -74,9 +73,9 @@ require'nvim-tree'.setup {
     mappings = {
       custom_only = false,
       list = {
-        --{ key = "v",                        cb = tree_cb("vsplit") },
-        --{ key = "V",                        cb = tree_cb("split") },
-        { key = "R",                            cb = tree_cb("refresh") },
+        { key = "v",                            cb = tree_cb("vsplit") },
+        { key = "V",                            cb = tree_cb("split") },
+        { key = "<C-k>",                        cb = tree_cb("refresh") },
         { key = "D",                            cb = tree_cb("trash") },
         { key = "r",                            cb = tree_cb("rename") },
         { key = "y",                            cb = tree_cb("copy_name") },
