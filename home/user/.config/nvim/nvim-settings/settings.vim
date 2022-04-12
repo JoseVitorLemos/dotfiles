@@ -1,4 +1,5 @@
 set syntax
+set termguicolors
 set encoding=utf-8
 set number
 set relativenumber

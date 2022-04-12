@@ -7,6 +7,4 @@ source ~/.config/nvim/nvim-settings/airline.vim
 source ~/.config/nvim/nvim-settings/nvim_tree.vim
 source ~/.config/nvim/nvim-settings/treesitter.vim
 source ~/.config/nvim/nvim-settings/telescope.vim
-" source ~/.config/nvim/nvim-settings/lsp/lsp.vim
-" source ~/.config/nvim/nvim-settings/lsp/lsp_config.vim
-" source ~/.config/nvim/nvim-settings/lsp/nvim_lsp_installer.vim
+source ~/.config/nvim/nvim-settings/lualine.vim

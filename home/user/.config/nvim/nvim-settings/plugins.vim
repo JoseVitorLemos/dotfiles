@@ -5,18 +5,18 @@ call plug#begin()
   " Plug 'haorenW1025/completion-nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   "Plug 'pangloss/vim-javascript'    " javaScript support
-  Plug 'kyazdani42/nvim-web-devicons'
   "Plug 'preservim/nerdtree'
   Plug 'kyazdani42/nvim-tree.lua'
   Plug 'kyazdani42/nvim-web-devicons'
   "Plug 'ryanoasis/vim-devicons' " nerdtree icons
-  "Plug 'romgrk/barbar.nvim'
   "Plug 'arcticicestudio/nord-vim'
   Plug 'morhetz/gruvbox'
   "Plug 'projekt0n/github-nvim-theme'
-  Plug 'nvim-lualine/lualine.nvim'
+  " Plug 'romgrk/barbar.nvim'
+  " Plug 'kyazdani42/nvim-web-devicons'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'nvim-lualine/lualine.nvim'
   Plug 'joom/vim-commentary' " gcc comentary
   Plug 'ap/vim-css-color' " show colors in code css
   Plug 'nvim-lua/plenary.nvim'
