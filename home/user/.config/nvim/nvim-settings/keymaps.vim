@@ -1,9 +1,14 @@
 map <silent> <F1> :source ~/.config/nvim/init.vim<CR>
 
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
-
 nmap Z i<cr><esc>k$
+
+" Prevent x from overriding what's is the clipboard.
+nnoremap x "_x
+xnoremap X "_X   
+
+nmap <C-Space> I<Enter><Esc>
+
+nnoremap <C-a> ggVG
 
 map <C-j> <C-W>j
 map <C-k> <C-W>k
@@ -21,36 +26,31 @@ nnoremap <S-H> :split<Esc>
 vnoremap < <gv
 vnoremap > >gv
 
+" Simple snipets
 inoremap <C-c> console.log(
 inoremap <C-d> describe('', () => {})
 inoremap <C-t> test('', () => {})<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 
+" Highlight finder.
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
-" set transparent default
+" Transparent keys.
 let g:transparent_enabled = v:true
 nnoremap <C-n> :TransparentToggle<cr>
 
+" Enter visual block mode
+nnoremap X <c-v>
 
-" highlight and search word
-function! s:getSelectedText()
-  let l:old_reg = getreg('"')
-  let l:old_regtype = getregtype('"')
-  norm gvy
-  let l:ret = getreg('"')
-  call setreg('"', l:old_reg, l:old_regtype)
-  exe "norm \<Esc>"
-  return l:ret
-endfunction
+let g:clipboard = {
+  \   'name': 'win32yank-wsl',
+  \   'copy': {
+  \      '+': 'win32yank.exe -i --crlf',
+  \      '*': 'win32yank.exe -i --crlf',
+  \    },
+  \   'paste': {
+  \      '+': 'win32yank.exe -o --lf',
+  \      '*': 'win32yank.exe -o --lf',
+  \   },
+  \   'cache_enabled': 0,
+  \ }
 
-vnoremap <silent> * :call setreg("/",
-    \ substitute(<SID>getSelectedText(),
-    \ '\_s\+',
-    \ '\\_s\\+', 'g')
-    \ )<Cr>n
-
-vnoremap <silent> # :call setreg("?",
-    \ substitute(<SID>getSelectedText(),
-    \ '\_s\+',
-    \ '\\_s\\+', 'g')
-    \ )<Cr>n
