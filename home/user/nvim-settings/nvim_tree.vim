@@ -1,34 +1,3 @@
-let g:nvim_tree_icons = {
-\ 'default': '',
-\ 'symlink': '',
-\ 'git': {
-\   'unstaged': '',
-\   'staged': "✓",
-\   'unmerged': "",
-\   'renamed': "➜",
-\   'untracked': "U",
-\   'deleted': "",
-\   'ignored': "◌"
-\   },
-\ 'folder': {
-\   'arrow_open': "",
-\   'arrow_closed': "",
-\   'default': "",
-\   'open': "",
-\   'empty': "",
-\   'empty_open': "",
-\   'symlink': "",
-\   'symlink_open': "",
-\   }
-\ }
-
-let g:nvim_tree_show_icons = {
-\ 'git': 1,
-\ 'folders': 1,
-\ 'files': 1,
-\ 'folder_arrows': 1,
-\ }
-
 nnoremap <C-t> :NvimTreeToggle<CR>
 nnoremap <Space>r :NvimTreeRefresh<CR>
 nnoremap <C-f> :NvimTreeFindFile<CR>
@@ -38,7 +7,6 @@ nnoremap <C-f> :NvimTreeFindFile<CR>
 lua << EOF
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 require'nvim-tree'.setup {
-  indent_markers = 1, -- this option shows indent markers when folders are open
   disable_netrw = true, -- disables netrw completely
   auto_reload_on_write = true,
   hijack_netrw = true, -- Hijack netrw window on startup. prevents netrw from automatically opening when opening directories (but lets you keep its other utilities)
@@ -107,7 +75,49 @@ require'nvim-tree'.setup {
         }
       }
     }
-  }
+  },
+  renderer = {
+    indent_markers = {
+      enable = false,
+      icons = {
+        corner = "└ ",
+        edge = "│ ",
+        none = "  ",
+        },
+      },
+    icons = {
+      webdev_colors = true,
+      show = {
+        file = true,
+        folder = true,
+        folder_arrow = true,
+        git = true,
+      },
+    glyphs = {
+      default = "",
+      symlink = "",
+      folder = {
+        arrow_closed = "",
+        arrow_open = "",
+        default = "",
+        open = "",
+        empty = "",
+        empty_open = "",
+        symlink = "",
+        symlink_open = "",
+        },
+      git = {
+        unstaged = "",
+        staged = "✓",
+        unmerged = "",
+        renamed = "➜",
+        untracked = "U",
+        deleted = "",
+        ignored = "◌",
+        },
+      },
+    },
+  },
 }
 local opts = { silent = true, noremap = true }
 EOF
