@@ -8,3 +8,4 @@ source ~/.config/nvim/nvim-settings/treesitter.vim
 source ~/.config/nvim/nvim-settings/telescope.vim
 source ~/.config/nvim/nvim-settings/lualine.vim
 source ~/.config/nvim/nvim-settings/ominisharp.vim
+source ~/.config/nvim/nvim-settings/indent_blankline.vim

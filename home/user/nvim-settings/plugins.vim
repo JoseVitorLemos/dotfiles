@@ -3,7 +3,7 @@ call plug#begin()
   " Plug 'neovim/nvim-lspconfig'
   " Plug 'williamboman/nvim-lsp-installer'
   " Plug 'haorenW1025/completion-nvim'
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   "Plug 'pangloss/vim-javascript'    " javaScript support
   "Plug 'preservim/nerdtree'
   Plug 'kyazdani42/nvim-tree.lua'
@@ -23,4 +23,5 @@ call plug#begin()
   Plug 'nvim-telescope/telescope.nvim'
   "Plug 'tribela/vim-transparent'
   Plug 'OmniSharp/omnisharp-vim'
+  Plug 'lukas-reineke/indent-blankline.nvim'
 call plug#end()
