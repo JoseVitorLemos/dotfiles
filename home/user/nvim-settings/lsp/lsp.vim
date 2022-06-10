@@ -2,25 +2,23 @@
 
 lua << EOF
   local nvim_lsp = require("lspconfig")
-  local completion = require("completion")
 
   local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local opts = { noremap=true, silent=true }
 end
- vim.lsp.handlers['textDocument/references'] = vim.lsp.with(
-	on_references, {
-		-- Use location list instead of quickfix list
- 		loclist = false,
- 	}
- )
-   nvim_lsp.tsserver.setup {
-   on_attach = completion.on_attach,
-   handlers = {
-      ['textDocument/publishDiagnostics'] = function() end,
+  vim.lsp.handlers['textDocument/references'] = vim.lsp.with(
+    on_references, {
+      -- Use location list instead of quickfix list
+      loclist = false, 
     },
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+      virtual_text = false
+    }
+  )
 
-  }
+  vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
+
 EOF
 
 let g:completion_enable_auto_popup = 0

@@ -1,8 +1,8 @@
 call plug#begin()
   "Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'npm install --frozen-lockfile' }
-  " Plug 'neovim/nvim-lspconfig'
-  " Plug 'williamboman/nvim-lsp-installer'
-  " Plug 'haorenW1025/completion-nvim'
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'williamboman/nvim-lsp-installer'
+  Plug 'haorenW1025/completion-nvim'
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   "Plug 'pangloss/vim-javascript'    " javaScript support
   "Plug 'preservim/nerdtree'
@@ -22,6 +22,6 @@ call plug#begin()
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
   "Plug 'tribela/vim-transparent'
-  Plug 'OmniSharp/omnisharp-vim'
+  "Plug 'OmniSharp/omnisharp-vim'
   Plug 'lukas-reineke/indent-blankline.nvim'
 call plug#end()
