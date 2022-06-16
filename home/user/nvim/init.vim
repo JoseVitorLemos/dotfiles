@@ -7,5 +7,8 @@ source ~/.config/nvim/nvim-settings/nvim_tree.vim
 source ~/.config/nvim/nvim-settings/treesitter.vim
 source ~/.config/nvim/nvim-settings/telescope.vim
 source ~/.config/nvim/nvim-settings/lualine.vim
-source ~/.config/nvim/nvim-settings/ominisharp.vim
 source ~/.config/nvim/nvim-settings/indent_blankline.vim
+source ~/.config/nvim/nvim-settings/lsp/lsp.vim
+source ~/.config/nvim/nvim-settings/lsp/lsp_config.vim
+source ~/.config/nvim/nvim-settings/lsp/nvim_lsp_installer.vim
+source ~/.config/nvim/nvim-settings/lsp/cmp_config.vim

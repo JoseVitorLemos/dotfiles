@@ -1,4 +1,6 @@
 map <silent> <F1> :source ~/.config/nvim/init.vim<CR>
+map <silent> <F2> :PlugInstall<CR>
+map <silent> <F3> :PlugClean<CR>
 
 nmap Z i<cr><esc>k$
 
@@ -6,7 +8,7 @@ nmap Z i<cr><esc>k$
 nnoremap x "_x
 xnoremap X "_X   
 
-nmap <C-Space> I<Enter><Esc>
+nnoremap <C-Space> i<CR><ESC>
 
 nnoremap <C-a> ggVG
 

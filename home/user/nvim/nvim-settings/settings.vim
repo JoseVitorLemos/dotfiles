@@ -1,10 +1,15 @@
 set syntax
 set termguicolors
+set completeopt=noinsert,menuone,noselect
 set encoding=utf-8
+set fileencoding=utf-8
+set termencoding=utf-8
 set number
 set relativenumber
 set shell=$SHELL
 set hidden " show all buffers
+set splitbelow splitright
+set t_Co=256
 set noswapfile 
 set expandtab " Convert tabs in spaces
 set copyindent
