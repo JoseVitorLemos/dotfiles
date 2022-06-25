@@ -1,6 +1,6 @@
 lua << EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { 'html', 'javascript', 'typescript', 'tsx', 'css', 'json' },
+  ensure_installed = { 'html', 'javascript', 'typescript', 'tsx', 'css', 'json', 'c_sharp' },
   -- ensure_installed = "all", -- or maintained
   highlight = {
     enable = true,

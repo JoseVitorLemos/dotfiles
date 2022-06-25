@@ -1,4 +1,6 @@
-map <silent> <F1> :source ~/.config/nvim/init.vim<CR>
+nnoremap <silent> <F1> :source ~/.config/nvim/init.vim<CR>
+nnoremap <silent> <F2> :PlugInstall<CR>
+nnoremap <silent> <F3> :PlugClean<CR>
 
 nmap Z i<cr><esc>k$
 
@@ -6,7 +8,7 @@ nmap Z i<cr><esc>k$
 nnoremap x "_x
 xnoremap X "_X   
 
-nmap <C-Space> I<Enter><Esc>
+nnoremap <C-Space> i<CR><ESC>
 
 nnoremap <C-a> ggVG
 
@@ -26,21 +28,36 @@ nnoremap <S-H> :split<Esc>
 vnoremap < <gv
 vnoremap > >gv
 
+inoremap <nowait> jj <ESC>
+nnoremap ww :w <Enter> 
+nnoremap qq :q <Enter> 
+nnoremap QQ :q! <Enter> 
+
+cnoreabbrev W w " save with :W and :w
+cnoreabbrev Q q " leave with :Q and :q
+
+" remaps
+nnoremap ; :
+nnoremap : ;
+vnoremap ; :
+vnoremap : ;
+
 " Simple snipets
 inoremap <C-c> console.log(
-inoremap <C-d> describe('', () => {})
-inoremap <C-t> test('', () => {})<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+inoremap <C-d> describe('', () => {<Enter>})
+inoremap <C-t> test('', () => {<Enter>})<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 
 " Highlight finder.
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " Transparent keys.
-let g:transparent_enabled = v:true
-nnoremap <C-n> :TransparentToggle<cr>
+"let g:transparent_enabled = v:true
+"nnoremap <C-n> :TransparentToggle<cr>
 
 " Enter visual block mode
 nnoremap X <c-v>
 
+" WSL integration copy and paste
 let g:clipboard = {
   \   'name': 'win32yank-wsl',
   \   'copy': {

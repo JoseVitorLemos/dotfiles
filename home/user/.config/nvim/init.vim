@@ -2,9 +2,10 @@ source ~/.config/nvim/nvim-settings/settings.vim
 source ~/.config/nvim/nvim-settings/keymaps.vim
 source ~/.config/nvim/nvim-settings/plugins.vim
 source ~/.config/nvim/nvim-settings/themes.vim
-source ~/.config/nvim/nvim-settings/coc_config.vim
-source ~/.config/nvim/nvim-settings/airline.vim
+source ~/.config/nvim/nvim-settings/barbar.vim
 source ~/.config/nvim/nvim-settings/nvim_tree.vim
 source ~/.config/nvim/nvim-settings/treesitter.vim
 source ~/.config/nvim/nvim-settings/telescope.vim
 source ~/.config/nvim/nvim-settings/lualine.vim
+source ~/.config/nvim/nvim-settings/indent_blankline.vim
+source ~/.config/nvim/nvim-settings/omnisharp.vim
