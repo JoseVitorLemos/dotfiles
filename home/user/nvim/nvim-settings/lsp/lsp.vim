@@ -4,6 +4,7 @@ lua << EOF
   local nvim_lsp = require("lspconfig")
 
   local on_attach = function(client, bufnr)
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local opts = { noremap=true, silent=true }
 end
@@ -19,11 +20,20 @@ end
 
   vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
 
+  local lsp_flags = {
+    -- This is the default in Nvim 0.7+
+    debounce_text_changes = 150,
+  }
+  require('lspconfig')['csharp_ls'].setup{
+      on_attach = on_attach,
+      flags = lsp_flags,
+  }
+
 EOF
 
 let g:completion_enable_auto_popup = 0
 
-nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> gD <cmd>lua vim.omnisharp.buf.declaration()<CR>
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gca   <cmd>:Telescope lsp_code_actions<CR>
 nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>

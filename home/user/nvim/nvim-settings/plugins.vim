@@ -1,31 +1,33 @@
 call plug#begin()
-  "Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'npm install --frozen-lockfile' }
-  Plug 'neovim/nvim-lspconfig'
-  Plug 'williamboman/nvim-lsp-installer'
-  Plug 'hrsh7th/nvim-cmp' "Autocompletion plugin
-  Plug 'hrsh7th/cmp-nvim-lsp' "LSP source for nvim-cmp
-  Plug 'haorenW1025/completion-nvim'
-   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-  "Plug 'pangloss/vim-javascript'    "javaScript support
-  "Plug 'preservim/nerdtree'
   Plug 'kyazdani42/nvim-tree.lua'
   Plug 'kyazdani42/nvim-web-devicons'
-  "Plug 'ryanoasis/vim-devicons' "nerdtree icons
-  "Plug 'arcticicestudio/nord-vim'
+
+  " auto complete
+  Plug 'haorenW1025/completion-nvim'
+  Plug 'prabirshrestha/asyncomplete.vim'
+
+  " themes
   Plug 'morhetz/gruvbox'
-  "Plug 'projekt0n/github-nvim-theme'
   Plug 'romgrk/barbar.nvim'
-  "Plug 'kyazdani42/nvim-web-devicons'
-  "Plug 'vim-airline/vim-airline'
-  "Plug 'vim-airline/vim-airline-themes'
   Plug 'nvim-lualine/lualine.nvim'
-  Plug 'joom/vim-commentary' "gcc comentary
+
+  " language server
+  Plug 'OmniSharp/omnisharp-vim'
+
+  " highlighting
+  Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   Plug 'ap/vim-css-color' "show colors in code css
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
-  "Plug 'tribela/vim-transparent'
-  "Plug 'OmniSharp/omnisharp-vim'
   Plug 'lukas-reineke/indent-blankline.nvim'
-  Plug 'valloric/matchtagalways'
-  Plug 'jiangmiao/auto-pairs'
+
+  " helps
+  Plug 'williamboman/nvim-lsp-installer'
+  Plug 'joom/vim-commentary' "gcc comentary
 call plug#end()
+
+" Plug 'neovim/nvim-lspconfig'
+" Plug 'hrsh7th/nvim-cmp' "Autocompletion plugin
+" Plug 'hrsh7th/cmp-nvim-lsp' "LSP source for nvim-cmp
+" Plug 'valloric/matchtagalways'
+
