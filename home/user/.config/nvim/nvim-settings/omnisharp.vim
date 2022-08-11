@@ -11,7 +11,7 @@ augroup omnisharp_commands
   autocmd FileType cs nmap <silent> <buffer> gi <Plug>(omnisharp_find_implementations)
   autocmd FileType cs nmap <silent> <buffer> gvi <cmd>:vsplit<cr> <Plug>(omnisharp_find_implementations)
   autocmd FileType cs nmap <silent> <buffer> K <Plug>(omnisharp_documentation)
-  autocmd FileType cs nmap <silent> <buffer> <Leader>fg <Plug>(omnisharp_code_format)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>ft <Plug>(omnisharp_code_format)
   autocmd FileType cs nmap <silent> <buffer> gp <Plug>(omnisharp_preview_definition)
   autocmd FileType cs nmap <silent> <buffer> <C-\> <Plug>(omnisharp_signature_help)
   autocmd FileType cs imap <silent> <buffer> <C-\> <Plug>(omnisharp_signature_help)

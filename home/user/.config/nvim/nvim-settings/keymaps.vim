@@ -2,7 +2,7 @@ nnoremap <silent> <F1> :source ~/.config/nvim/init.vim<CR>
 nnoremap <silent> <F2> :PlugInstall<CR>
 nnoremap <silent> <F3> :PlugClean<CR>
 
-nmap Z i<cr><esc>k$
+nmap Z i<cr><esc><cr>
 
 " Prevent x from overriding what's is the clipboard.
 nnoremap x "_x
@@ -29,6 +29,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 inoremap <nowait> jj <ESC>
+inoremap <ESC> <Nop>
 nnoremap ww :w <Enter> 
 nnoremap qq :q <Enter> 
 nnoremap QQ :q! <Enter> 
@@ -43,16 +44,12 @@ vnoremap ; :
 vnoremap : ;
 
 " Simple snipets
-inoremap <C-c> console.log(
+inoremap <C-c> Console.WriteLine();<Left><Left>
 inoremap <C-d> describe('', () => {<Enter>})
 inoremap <C-t> test('', () => {<Enter>})<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 
 " Highlight finder.
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
-
-" Transparent keys.
-"let g:transparent_enabled = v:true
-"nnoremap <C-n> :TransparentToggle<cr>
 
 " Enter visual block mode
 nnoremap X <c-v>

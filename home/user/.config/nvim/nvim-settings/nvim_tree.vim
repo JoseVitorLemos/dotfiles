@@ -33,7 +33,6 @@ require'nvim-tree'.setup {
     side = 'right',
     width = 40,
     height = 30,
-    auto_resize = true,
     preserve_window_proportions = false,
     relativenumber = false,
     number = false,
@@ -51,7 +50,7 @@ require'nvim-tree'.setup {
         { key = "gy",                           cb = tree_cb("copy_absolute_path") },
         { key = "[c",                           cb = tree_cb("prev_git_item") },
         { key = "]c",                           cb = tree_cb("next_git_item") },
-        },
+      },
     },
   },
   filters = {
@@ -65,7 +64,7 @@ require'nvim-tree'.setup {
     },
     open_file = {
       quit_on_open = true,
-      resize_window = true,
+      resize_window = false,
       window_picker = {
         enable = true,
         chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",

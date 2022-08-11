@@ -1,24 +1,25 @@
 syntax enable
+set filetype
 set ma
 set encoding=utf-8
-set fileencoding=utf-8
-set termencoding=utf-8
-set number
-set relativenumber
 set shell=$SHELL
+set number
+"set relativenumber
 set hidden " show all buffers
 set splitbelow splitright
-set t_Co=256
 set noswapfile 
 set expandtab " Convert tabs in spaces
 set copyindent
 set preserveindent
 set autoindent " automatically indent the next new line to match the indent of the previous one
 set noai
+
+" Tab
 set tabstop=2 " all the new tab characters entered will be changed to spaces, this case with two spaces
 set shiftwidth=2 " for ident tabs
 set softtabstop=2 "  how many columns (=spaces) the cursor moves right when you press <Tab>, and how many columns it moves left when you press <BS> (backspace)
-set softtabstop=-1
+set scrolloff=10
+
 set smartindent
 set gdefault
 set showmatch
