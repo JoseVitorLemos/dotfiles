@@ -51,6 +51,19 @@ inoremap <C-t> test('', () => {<Enter>})<Left><Left><Left><Left><Left><Left><Lef
 " Highlight finder.
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
+vnoremap ' <esc>:call QuickWrap("'")<cr>
+vnoremap " <esc>:call QuickWrap('"')<cr>
+
+function! QuickWrap(wrapper)
+  let l:w = a:wrapper
+  let l:inside_or_around = (&selection == 'exclusive') ? ('i') : ('a')
+  normal `>
+  execute "normal " . inside_or_around . escape(w, '\')
+  normal `<
+  execute "normal i" . escape(w, '\')
+  normal `<
+endfunction
+
 " Enter visual block mode
 nnoremap X <c-v>
 
