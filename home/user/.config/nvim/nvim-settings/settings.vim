@@ -1,10 +1,10 @@
 syntax enable
-set filetype
+"set filetype
 set ma
 set encoding=utf-8
 set shell=$SHELL
 set number
-"set relativenumber
+set relativenumber
 set hidden " show all buffers
 set splitbelow splitright
 set noswapfile 
@@ -15,12 +15,12 @@ set autoindent " automatically indent the next new line to match the indent of t
 set noai
 
 " Tab
-set tabstop=2 " all the new tab characters entered will be changed to spaces, this case with two spaces
-set shiftwidth=2 " for ident tabs
-set softtabstop=2 "  how many columns (=spaces) the cursor moves right when you press <Tab>, and how many columns it moves left when you press <BS> (backspace)
+set tabstop=4 " all the new tab characters entered will be changed to spaces, this case with two spaces
+set shiftwidth=0 " for ident tabs
+set softtabstop=4 "  how many columns (=spaces) the cursor moves right when you press <Tab>, and how many columns it moves left when you press <BS> (backspace)
+set smartindent
 set scrolloff=10
 
-set smartindent
 set gdefault
 set showmatch
 set nohlsearch "clean search highlightin
@@ -30,6 +30,7 @@ set cursorline  " will highlight the current line in every window and update the
 set clipboard=unnamedplus
 let mapleader = " " "map leader to Space
 set tw=80
+set foldmethod 
 
 " disable comment on insert
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o

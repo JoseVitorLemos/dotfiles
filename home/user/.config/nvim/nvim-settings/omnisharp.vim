@@ -15,6 +15,7 @@ augroup omnisharp_commands
   autocmd FileType cs nmap <silent> <buffer> gp <Plug>(omnisharp_preview_definition)
   autocmd FileType cs nmap <silent> <buffer> <C-\> <Plug>(omnisharp_signature_help)
   autocmd FileType cs imap <silent> <buffer> <C-\> <Plug>(omnisharp_signature_help)
+  autocmd FileType cs imap <silent> <buffer> <F8> <cmd>:OmniSharpRestartServer
 augroup END
 
 " Tab completion asyncomplete

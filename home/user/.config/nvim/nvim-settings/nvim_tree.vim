@@ -4,6 +4,9 @@ nnoremap <C-f> :NvimTreeFindFile<CR>
 
 "highlight NvimTreeFolderIcon guibg=blue
 
+autocmd BufEnter * if expand('%') =~ 'NvimTree' && bufname('%') !~ 'NvimTree' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+
 lua << EOF
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 require'nvim-tree'.setup {
@@ -55,7 +58,7 @@ require'nvim-tree'.setup {
   },
   filters = {
     dotfiles = false,
-    custom = { ".git", "node_modules", '.cache', 'dist', '.dist', 'build' }
+    custom = { "node_modules", '.cache', 'dist', '.dist', 'build', 'bin', 'obj' }
   },
   actions = {
     change_dir = {
@@ -64,7 +67,7 @@ require'nvim-tree'.setup {
     },
     open_file = {
       quit_on_open = true,
-      resize_window = false,
+      resize_window = true,
       window_picker = {
         enable = true,
         chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",

@@ -7,6 +7,7 @@ call plug#begin()
 
   " themes
   Plug 'morhetz/gruvbox'
+  "Plug 'tomasiser/vim-code-dark'
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
@@ -17,6 +18,9 @@ call plug#begin()
   Plug 'OmniSharp/omnisharp-vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'puremourning/vimspector'
+
+  " Linting/error highlighting
+  Plug 'dense-analysis/ale'
 
   " highlighting
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }

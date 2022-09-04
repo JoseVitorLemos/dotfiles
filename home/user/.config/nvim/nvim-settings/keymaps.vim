@@ -2,7 +2,8 @@ nnoremap <silent> <F1> :source ~/.config/nvim/init.vim<CR>
 nnoremap <silent> <F2> :PlugInstall<CR>
 nnoremap <silent> <F3> :PlugClean<CR>
 
-nmap Z i<cr><esc><cr>
+
+nnoremap <Enter> :call append(line('.')-1, '')<CR>
 
 " Prevent x from overriding what's is the clipboard.
 nnoremap x "_x
@@ -33,6 +34,9 @@ inoremap <ESC> <Nop>
 nnoremap ww :w <Enter> 
 nnoremap qq :q <Enter> 
 nnoremap QQ :q! <Enter> 
+
+" clear unix spaces
+nnoremap <leader>cc :%s/\r//g <cr>
 
 cnoreabbrev W w " save with :W and :w
 cnoreabbrev Q q " leave with :Q and :q
