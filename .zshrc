@@ -109,7 +109,7 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=on
 
 # z-script
-. /home/rick/z.sh
+. ~/z.sh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -128,12 +128,9 @@ function ide() {
 
 	session="ide"
 
-
   set -uo pipefail
 
-
   tmux has-session -t ${session} 2>/dev/null
-
 
   if [[ $? == 0 ]]; then
       echo "Session '${session}' already exists"
@@ -174,17 +171,38 @@ function attach_ide() {
 
 PROMPT_COMMAND=attach_ide
 
-# set color ls
-# if dont work set -NX
-alias ls="ls --color"
+# Set color ls
+alias ls="ls -lru --color"
 LS_COLORS='di=1;34:fi=0:'
 export LS_COLORS
 
-# docker service start
-alias docker-start='sudo service docker start'
+# Docker service start
+alias docker_start='sudo service docker start'
 
-alias attach='tmux attach -t '
+# Tmux alias
+alias attach='tmux attach -t'
+alias tmuxkill='tmux kill-session -t'
+alias nvimt="nvim ~/.tmux.conf"
+alias sourcet='tmux source ~/.tmux.conf'
+
+# Utils
 alias dirr='explorer.exe .'
+alias sourcez='source ~/.zshrc'
+alias nvimz='nvim ~/.zshrc'
+alias python=/usr/bin/python3
+export PATH="$PATH:$HOME/.dotnet/tools"
 
-export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
-. /home/rick/z.sh
+alias win_code='cd /mnt/c/Users/JVitor/Desktop/codes/dotnet/'
+
+alias dr='dotnet run'
+alias db='dotnet build'
+alias du='dotnet ef database update'
+alias dd='dotnet ef database drop'
+alias dm='dotnet ef migrations add'
+
+alias ..='cd ../../'
+alias ...='cd ../../../'
+
+alias note='notepad.exe ~/Documentos/Projetos/notes.txt'
+
+export PATH=$PATH:./node_modules/.bin
