@@ -8,5 +8,5 @@ source ~/.config/nvim/nvim-settings/nvim_tree.vim
 source ~/.config/nvim/nvim-settings/treesitter.vim
 source ~/.config/nvim/nvim-settings/telescope.vim
 source ~/.config/nvim/nvim-settings/lualine.vim
-"source ~/.config/nvim/nvim-settings/indent_blankline.vim
+source ~/.config/nvim/nvim-settings/indent_blankline.vim
 source ~/.config/nvim/nvim-settings/omnisharp.vim

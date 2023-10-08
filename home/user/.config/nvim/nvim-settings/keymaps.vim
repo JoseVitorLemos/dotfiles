@@ -31,7 +31,7 @@ vnoremap > >gv
 
 inoremap <nowait> jj <ESC>
 inoremap <ESC> <Nop>
-nnoremap ww :w <Enter> 
+nnoremap ww :w! <Enter> 
 nnoremap qq :q <Enter> 
 nnoremap QQ :q! <Enter> 
 
