@@ -1,5 +1,6 @@
 call plug#begin()
-  Plug 'kyazdani42/nvim-tree.lua'
+  Plug 'nvim-tree/nvim-web-devicons'
+  Plug 'nvim-tree/nvim-tree.lua'
 
   " auto complete for nvim
   Plug 'haorenW1025/completion-nvim'
@@ -13,6 +14,7 @@ call plug#begin()
   Plug 'vim-airline/vim-airline-themes'
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'yamatsum/nvim-web-nonicons'
+  Plug 'romgrk/barbar.nvim'
 
   " language server
   Plug 'OmniSharp/omnisharp-vim'
@@ -23,7 +25,7 @@ call plug#begin()
   Plug 'dense-analysis/ale'
 
   " highlighting
-  Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+  "Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   Plug 'ap/vim-css-color' "show colors in code css
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'

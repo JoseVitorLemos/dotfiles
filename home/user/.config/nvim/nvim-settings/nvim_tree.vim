@@ -2,20 +2,36 @@ nnoremap <C-t> :NvimTreeToggle<CR>
 nnoremap <Space>r :NvimTreeRefresh<CR>
 nnoremap <C-f> :NvimTreeFindFile<CR>
 
-"highlight NvimTreeFolderIcon guibg=blue
-
-autocmd BufEnter * if expand('%') =~ 'NvimTree' && bufname('%') !~ 'NvimTree' && winnr('$') > 1 |
-    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
-
 lua << EOF
-local tree_cb = require'nvim-tree.config'.nvim_tree_callback
-require'nvim-tree'.setup {
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.opt.termguicolors = true
+
+local function on_attach(bufnr)
+  local api = require 'nvim-tree.api'
+
+  local function opts(desc)
+    return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
+
+  vim.keymap.set('n', 'V',          api.node.open.vertical,                opts('Open: Vertical Split'))
+  vim.keymap.set('n', '<C-x>',      api.node.open.horizontal,              opts('Open: Horizontal Split'))
+  vim.keymap.set('n', 'D',          api.tree.reload,                       opts('Refresh'))
+  vim.keymap.set('n', '<C-k>',      api.fs.trash,                          opts('Trash'))
+  vim.keymap.set('n', '<C-r>',      api.fs.rename,                         opts('Rename'))
+  vim.keymap.set('n', 'y',          api.fs.copy.filename,                  opts('Copy Name'))
+  vim.keymap.set('n', 'Y',          api.fs.copy.absolute_path,             opts('Copy Absolute Path'))
+
+  api.config.mappings.default_on_attach(bufnr)
+end
+
+require("nvim-tree").setup({
+  on_attach = on_attach,
   disable_netrw = true, -- disables netrw completely
   auto_reload_on_write = true,
   hijack_netrw = true, -- Hijack netrw window on startup. prevents netrw from automatically opening when opening directories (but lets you keep its other utilities)
   hijack_cursor = false, -- hijack the cursor in the tree to put it at the start of the filename
   auto_reload_on_write = true,
-  open_on_setup = true,
   open_on_tab = false,
   update_cwd = false, -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually)
   diagnostics = {
@@ -35,26 +51,10 @@ require'nvim-tree'.setup {
   view = {
     side = 'right',
     width = 40,
-    height = 30,
     preserve_window_proportions = false,
     relativenumber = false,
     number = false,
-    signcolumn = "no",
-    mappings = {
-      custom_only = false,
-      list = {
-        { key = "v",                            cb = tree_cb("vsplit") },
-        { key = "V",                            cb = tree_cb("split") },
-        { key = "<C-k>",                        cb = tree_cb("refresh") },
-        { key = "D",                            cb = tree_cb("trash") },
-        { key = "r",                            cb = tree_cb("rename") },
-        { key = "y",                            cb = tree_cb("copy_name") },
-        { key = "Y",                            cb = tree_cb("copy_path") },
-        { key = "gy",                           cb = tree_cb("copy_absolute_path") },
-        { key = "[c",                           cb = tree_cb("prev_git_item") },
-        { key = "]c",                           cb = tree_cb("next_git_item") },
-      },
-    },
+    signcolumn = "no"
   },
   filters = {
     dotfiles = false,
@@ -120,6 +120,6 @@ require'nvim-tree'.setup {
       },
     },
   },
-}
+})
 local opts = { silent = true, noremap = true }
 EOF
