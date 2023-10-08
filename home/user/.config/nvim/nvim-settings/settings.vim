@@ -14,9 +14,9 @@ set autoindent " automatically indent the next new line to match the indent of t
 set noai
 
 " Tab
-set tabstop=2 " all the new tab characters entered will be changed to spaces, this case with two spaces
+set tabstop=4 " all the new tab characters entered will be changed to spaces, this case with two spaces
 set shiftwidth=0 " for ident tabs
-set softtabstop=2 "  how many columns (=spaces) the cursor moves right when you press <Tab>, and how many columns it moves left when you press <BS> (backspace)
+set softtabstop=4 "  how many columns (=spaces) the cursor moves right when you press <Tab>, and how many columns it moves left when you press <BS> (backspace)
 set expandtab " Convert tabs in spaces
 set smartindent
 set scrolloff=10

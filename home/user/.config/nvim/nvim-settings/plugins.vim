@@ -10,11 +10,13 @@ call plug#begin()
   Plug 'morhetz/gruvbox'
   "Plug 'tomasiser/vim-code-dark'
   Plug 'nvim-lualine/lualine.nvim'
-  Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'yamatsum/nvim-web-nonicons'
-  Plug 'romgrk/barbar.nvim'
+
+  " buffer themes
+  "Plug 'romgrk/barbar.nvim'
+  Plug 'vim-airline/vim-airline'
 
   " language server
   Plug 'OmniSharp/omnisharp-vim'
@@ -25,7 +27,7 @@ call plug#begin()
   Plug 'dense-analysis/ale'
 
   " highlighting
-  "Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+  Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   Plug 'ap/vim-css-color' "show colors in code css
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
