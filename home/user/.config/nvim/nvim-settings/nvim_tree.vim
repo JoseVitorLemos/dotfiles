@@ -25,7 +25,7 @@ local function on_attach(bufnr)
   api.config.mappings.default_on_attach(bufnr)
 end
 
-require("nvim-tree").setup({
+require('nvim-tree').setup({
   on_attach = on_attach,
   disable_netrw = true, -- disables netrw completely
   auto_reload_on_write = true,
@@ -54,11 +54,11 @@ require("nvim-tree").setup({
     preserve_window_proportions = false,
     relativenumber = false,
     number = false,
-    signcolumn = "no"
+    signcolumn = 'no'
   },
   filters = {
     dotfiles = false,
-    custom = { "node_modules", '.cache', 'dist', '.dist', 'build', 'bin', 'obj' }
+    custom = { 'node_modules', '.cache', 'dist', '.dist', 'build', 'bin', 'obj' }
   },
   actions = {
     change_dir = {
@@ -70,10 +70,10 @@ require("nvim-tree").setup({
       resize_window = true,
       window_picker = {
         enable = true,
-        chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+        chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890',
         exclude = {
-          filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame", },
-          buftype  = { "nofile", "terminal", "help", },
+          filetype = { 'notify', 'packer', 'qf', 'diff', 'fugitive', 'fugitiveblame' },
+          buftype  = { 'nofile', 'terminal', 'help', },
         }
       }
     }
@@ -82,9 +82,9 @@ require("nvim-tree").setup({
     indent_markers = {
       enable = false,
       icons = {
-        corner = "└ ",
-        edge = "│ ",
-        none = "  ",
+        corner = '└ ',
+        edge = '│ ',
+        none = '  ',
         },
       },
     icons = {
@@ -96,26 +96,26 @@ require("nvim-tree").setup({
         git = true,
       },
     glyphs = {
-      default = "",
-      symlink = "",
+      default = '',
+      symlink = '',
       folder = {
-        arrow_closed = "",
-        arrow_open = "",
-        default = "",
-        open = "",
-        empty = "",
-        empty_open = "",
-        symlink = "",
-        symlink_open = "",
+        arrow_closed = '',
+        arrow_open = '',
+        default = '',
+        open = '',
+        empty = '',
+        empty_open = '',
+        symlink = '',
+        symlink_open = '',
         },
       git = {
-        unstaged = "",
-        staged = "✓",
-        unmerged = "",
-        renamed = "➜",
-        untracked = "U",
-        deleted = "",
-        ignored = "◌",
+        unstaged = '',
+        staged = '✓',
+        unmerged = '',
+        renamed = '➜',
+        untracked = 'U',
+        deleted = '',
+        ignored = '◌',
         },
       },
     },

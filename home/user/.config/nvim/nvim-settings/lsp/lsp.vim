@@ -20,10 +20,9 @@ end
 
   vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
 
-  local lsp_flags = {
-    -- This is the default in Nvim 0.7+
-    debounce_text_changes = 150,
-  }
+  --local lsp_flags = {
+    --debounce_text_changes = 150,
+  --}
 
   require('lspconfig')['csharp_ls'].setup{
       on_attach = on_attach,

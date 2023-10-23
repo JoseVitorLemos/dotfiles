@@ -20,7 +20,7 @@ call plug#begin()
 
   " language server
   Plug 'OmniSharp/omnisharp-vim'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'neoclide/coc.nvim', { 'branch': 'release' } 
   Plug 'puremourning/vimspector'
 
   " Linting/error highlighting
@@ -33,6 +33,11 @@ call plug#begin()
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'jlcrochet/vim-razor'
+
+  " LSP 
+  Plug 'williamboman/mason.nvim'
+  Plug 'williamboman/mason-lspconfig.nvim'
+  Plug 'neovim/nvim-lspconfig'
 
   " helps
   Plug 'joom/vim-commentary' "gcc comentary

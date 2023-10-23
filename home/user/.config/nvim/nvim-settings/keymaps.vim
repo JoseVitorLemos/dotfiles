@@ -2,7 +2,6 @@ nnoremap <silent> <F1> :source ~/.config/nvim/init.vim<CR>
 nnoremap <silent> <F2> :PlugInstall<CR>
 nnoremap <silent> <F3> :PlugClean<CR>
 
-
 nnoremap <Enter> :call append(line('.')-1, '')<CR>
 
 " Prevent x from overriding what's is the clipboard.
@@ -38,6 +37,12 @@ nnoremap QQ :q! <Enter>
 " clear unix spaces
 nnoremap <leader>cc :%s/\r//g <cr>
 
+" change double quotes to single quote
+nnoremap <silent> <F5> :%s/"\([^"]*\)"/'\1'/g <cr>
+
+" change single quote to double quote
+nnoremap <silent> <F6> :%s/'\([^']*\)'/"\1"/g <cr>
+
 cnoreabbrev W w " save with :W and :w
 cnoreabbrev Q q " leave with :Q and :q
 
@@ -52,8 +57,8 @@ inoremap <C-c> Console.WriteLine();<Left><Left>
 inoremap <C-d> describe('', () => {<Enter>})
 inoremap <C-t> test('', () => {<Enter>})<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 
-" Highlight finder.
-vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+" Highlight finder
+nnoremap // viw y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 vnoremap ' <esc>:call QuickWrap("'")<cr>
 vnoremap " <esc>:call QuickWrap('"')<cr>
@@ -67,6 +72,7 @@ function! QuickWrap(wrapper)
   execute "normal i" . escape(w, '\')
   normal `<
 endfunction
+
 
 " Enter visual block mode
 nnoremap X <c-v>

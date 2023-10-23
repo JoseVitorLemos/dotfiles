@@ -46,13 +46,13 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gp :call CocAction('jumpDefinition', 'vsplit')<CR>
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+keyset("n", "gd", "<Plug>(coc-definition)", {silent = true})
+keyset("n", "gy", "<Plug>(coc-type-definition)", {silent = true})
+keyset("n", "gi", "<Plug>(coc-implementation)", {silent = true})
+keyset("n", "gr", "<Plug>(coc-references)", {silent = true})" Use K to show documentation in preview window.
+autocmd FileType cs nmap <silent> <buffer> == <Plug>(omnisharp_code_format)
 
-" Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()

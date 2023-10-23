@@ -4,7 +4,7 @@ set ma
 set encoding=utf-8
 set shell=$SHELL
 set number
-set relativenumber
+"set relativenumber
 set hidden " show all buffers
 set splitbelow splitright
 set noswapfile 
